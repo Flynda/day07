@@ -1,0 +1,28 @@
+<h2>List of TV shows</h2>
+
+<ul>
+    {{#each tv_show}}
+    <li>
+        <a href="tv_show/{{this.tvid}}">{{this.name}}</a>
+    </li>
+    {{/each}}
+</ul>
+
+<nav class="d-flex justify-content-between btn-group">
+    {{#if notFirstPage}}
+        <form action="/" method="get">
+            <input type="hidden" name="offset" value="{{prevOffset}}">
+            <button type="submit" class="btn btn-secondary">Previous</button>
+        </form>
+    {{else}}
+        <button class="btn-outline-secondary" disabled>Previous</button>
+    {{/if}}
+    {{#if notLastPage}}
+        <form action="/" method="get">
+            <input type="hidden" name="offset" value="{{nextOffset}}">
+            <button type="submit" class="btn btn-secondary btn-block">Next</button>
+        </form>
+    {{else}}
+        <button class="btn-outline-secondary" disabled>Next</button>
+    {{/if}}
+</nav>
