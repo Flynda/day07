@@ -5,10 +5,12 @@
         <td>Name</td>
         <td>{{tv_shows.name}}</td>
     </tr>
-    <tr>
-        <td>Official Site:</td>
-        <td><a href="{{tv_shows.official_site}}">{{tv_shows.official_site}}</a></td>
-    </tr>
+    {{#if hasOfficialSite}}
+        <tr>
+            <td>Official Site:</td>
+            <td><a href="{{tv_shows.official_site}}">{{tv_shows.official_site}}</a></td>
+        </tr>
+    {{/if}}
     <tr>
         <td>Rating</td>
         <td>{{tv_shows.rating}}</td>
